@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+    // have a single source of truth we need to remove local component
     // state = {
     //     // count:0,
     //     // count: this.props.value,
@@ -85,7 +86,7 @@ renderTags(){
         <span className = {this.getBadgeClasses()}>{this.formatCount()}</span>
         {/* passing a reference vs target function */}
         {/* <button onClick={this.handleIncrement}className = "btn btn-secondary btn-sm">Increment</button> */}
-        <button onClick={()=>this.props.onIncrement()} className = "btn btn-secondary btn-sm">Increment</button>
+        <button onClick={()=>this.props.onIncrement(this.props.counter)} className = "btn btn-secondary btn-sm">Increment</button>
         {/* <button onClick={()=>this.handleIncrement(product)}className = "btn btn-secondary btn-sm">Increment</button> */}
         {/* <ul> */}
             {/* Unique key cuz of virtual dom - need to uniquely identify each item in this list, what element is changed and where the dom it should make changes */}
